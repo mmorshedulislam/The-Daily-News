@@ -69,7 +69,7 @@
             >
               <li class="nav-item">
                 <a
-                  onclick="loadNews('01')"
+                  onclick="loadNews('01'); toggleLoader('start')"
                   class="nav-link active"
                   aria-current="page"
                   href="#"
@@ -78,7 +78,7 @@
               </li>
               <li class="nav-item">
                 <a
-                  onclick="loadNews('02')"
+                  onclick="loadNews('02'); toggleLoader('start')"
                   class="nav-link"
                   aria-current="page"
                   href="#"
@@ -87,7 +87,7 @@
               </li>
               <li class="nav-item">
                 <a
-                  onclick="loadNews('03')"
+                  onclick="loadNews('03'); toggleLoader('start')"
                   class="nav-link"
                   aria-current="page"
                   href="#"
@@ -96,7 +96,7 @@
               </li>
               <li class="nav-item">
                 <a
-                  onclick="loadNews('04')"
+                  onclick="loadNews('04'); toggleLoader('start')"
                   class="nav-link"
                   aria-current="page"
                   href="#"
@@ -105,7 +105,7 @@
               </li>
               <li class="nav-item">
                 <a
-                  onclick="loadNews('05')"
+                  onclick="loadNews('05'); toggleLoader('start')"
                   class="nav-link"
                   aria-current="page"
                   href="#"
@@ -114,7 +114,7 @@
               </li>
               <li class="nav-item">
                 <a
-                  onclick="loadNews('06')"
+                  onclick="loadNews('06'); toggleLoader('start')"
                   class="nav-link"
                   aria-current="page"
                   href="#"
@@ -123,7 +123,7 @@
               </li>
               <li class="nav-item">
                 <a
-                  onclick="loadNews('07')"
+                  onclick="loadNews('07'); toggleLoader('start')"
                   class="nav-link"
                   aria-current="page"
                   href="#"
@@ -132,7 +132,7 @@
               </li>
               <li class="nav-item">
                 <a
-                  onclick="loadNews('08')"
+                  onclick="loadNews('08'); toggleLoader('start')"
                   class="nav-link"
                   aria-current="page"
                   href="#"
@@ -141,7 +141,7 @@
               </li>
               <li class="nav-item">
                 <a
-                  onclick="loadNews('')"
+                  onclick="loadNews(''); toggleLoader('start')"
                   class="nav-link"
                   aria-current="page"
                   href="#"
@@ -156,6 +156,13 @@
 
     <main class="container">
       <!-- ==== NEWS COUNT ==== -->
+      <section>
+        <div id="loader" class="text-center my-4 d-none">
+          <div class="spinner-grow" role="status">
+            <span class="visually-hidden">Loading...</span>
+          </div>
+        </div>
+      </section>
       <section>
         <div class="news-count">
           <h5><span id="news-count">4</span> items found for the Category</h5>
