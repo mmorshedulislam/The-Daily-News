@@ -1,5 +1,6 @@
-const loadNews = async () => {
-  const url = `https://openapi.programming-hero.com/api/news/category/08`;
+const loadNews = async (id) => {
+  console.log(id);
+  const url = `https://openapi.programming-hero.com/api/news/category/${id}`;
   const res = await fetch(url);
   const data = await res.json();
   displayNews(data.data);
@@ -7,8 +8,9 @@ const loadNews = async () => {
 
 const displayNews = (allNews) => {
   const newsCount = document.getElementById("news-count");
-  newsCount.innerText = `${allNews.length}`;
+  newsCount.innerText = `${allNews.length ? allNews.length : "No News Found"}`;
   const newsContainer = document.getElementById("newsContainer");
+  newsContainer.textContent = ``;
   allNews.forEach((news) => {
     console.log(news);
     const newsDiv = document.createElement("div");
@@ -70,5 +72,6 @@ const displayNews = (allNews) => {
   });
 };
 
+const searching = () => {};
 
 loadNews();
