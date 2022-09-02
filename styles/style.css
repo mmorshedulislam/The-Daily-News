@@ -1,0 +1,71 @@
+/*====== GOOGLE FONTS ======*/
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display&family=Roboto&display=swap');
+
+/*====== FONT FAMILY ======*/
+/* 
+    font-family: 'Playfair Display', serif;
+    font-family: 'Roboto', sans-serif; 
+*/
+
+/*======= COMMON CSS =======*/
+body {
+    background-color: #F6F6F6;
+    font-family: 'Roboto', sans-serif; 
+    
+}
+*{
+    box-sizing: border-box;
+}
+a:hover{
+    text-decoration: none;
+}
+img{
+    max-width: 100%;
+}
+
+/* ====== NAVBAR ====== */
+#navbar-logo{
+    border-bottom: 2px solid #ddd;
+}
+.navbar-brand{
+    font-family: 'Playfair Display', serif;
+    font-size: 24px;
+}
+.categories li{
+    padding: 0 8px;
+
+}
+.categories li a{
+    color: #858585;
+    font-size: 20px;
+}
+
+.news-count {
+    /* width: 80%; */
+    background: #FFFFFF;
+    padding: 15px;
+    margin: 20px auto;
+    border-radius: 7px;
+    padding-left: 30px;
+
+}
+.detail-icon a{
+    color: #5D5FEF;
+    font-size: 24px;
+}
+
+.news-item {
+    background: #FFFFFF;
+    padding: 15px 10px;
+    border-radius: 10px;
+}
+
+.news-description p{
+    color: #949494;
+}
+
+footer {
+    font-family: 'Playfair Display', serif;
+    background-color: #FFFFFF;
+    color: #949494;
+}
