@@ -163,6 +163,7 @@
           </div>
         </div>
       </section>
+      <!-- ==== NEWS COUNT === -->
       <section>
         <div class="news-count">
           <h5><span id="news-count">4</span> items found for the Category</h5>
@@ -192,6 +193,56 @@
 
       <!-- ===== NEWS  CONTAINER ===== -->
       <section class="my-5" id="newsContainer"></section>
+      <!-- ===== MODAL OR DETAIL OF NEWS ==== -->
+      <section>
+        <!-- Button trigger modal -->
+        <!-- <button
+          type="button"
+          class="btn btn-primary"
+          data-bs-toggle="modal"
+          data-bs-target="#newsDetails"
+        >
+          Launch static backdrop modal
+        </button> -->
+
+        <!-- Modal -->
+        <div
+          class="modal fade"
+          id="newsDetails"
+          data-bs-backdrop="static"
+          data-bs-keyboard="false"
+          tabindex="-1"
+          aria-labelledby="newsDetailsLabel"
+          aria-hidden="true"
+        >
+          <div class="modal-dialog modal-dialog-scrollable">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="newsDetailsLabel">Modal title</h5>
+                <button
+                  type="button"
+                  class="btn-close"
+                  data-bs-dismiss="modal"
+                  aria-label="Close"
+                ></button>
+              </div>
+              <div class="modal-body" id="news-detail-body">...</div>
+              <div class="modal-footer">
+                <button
+                  type="button"
+                  class="btn btn-secondary"
+                  data-bs-dismiss="modal"
+                >
+                  Close
+                </button>
+                <button type="button" class="btn btn-primary">
+                  Understood
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
     </main>
     <footer class="py-3">
       <p class="text-center fs-6 fw-bold">Copyright 2021 News Portal</p>
