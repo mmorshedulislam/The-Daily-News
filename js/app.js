@@ -1,21 +1,24 @@
 const loadNews = async () => {
-  const url = `https://openapi.programming-hero.com/api/news/category/01`;
+  const url = `https://openapi.programming-hero.com/api/news/category/08`;
   const res = await fetch(url);
   const data = await res.json();
   displayNews(data.data);
 };
 
 const displayNews = (allNews) => {
+  const newsCount = document.getElementById("news-count");
+  newsCount.innerText = `${allNews.length}`;
+  const newsContainer = document.getElementById("newsContainer");
   allNews.forEach((news) => {
-    const newsContainer = document.getElementById("newsContainer");
-    allNews.forEach((news) => {
-      console.log(news);
-      const newsDiv = document.createElement("div");
-      newsDiv.classList.add("row", "news-item", "my-3");
-      newsDiv.innerHTML = `
+    console.log(news);
+    const newsDiv = document.createElement("div");
+    newsDiv.classList.add("row", "news-item", "my-3");
+    newsDiv.innerHTML = `
       <div class="col-md-3 d-flex align-items-center">
         <div class="news-thumbnail">
-            <img src="${news.thumbnail_url}" class="img-fluid mb-3 w-100" alt="" />
+            <img src="${
+              news.thumbnail_url
+            }" class="img-fluid mb-3 w-100" alt="" />
         </div>
         </div>
         <div class="col-md-9 align-items-center d-flex">
@@ -26,12 +29,14 @@ const displayNews = (allNews) => {
                 ${news.title}
             </h3>
             <p>
-               ${news.details}
+               ${news.details.slice(0, 450)}
             </p>
             </div>
             <div class="news-info container d-flex align-items-center justify-content-between">
             <div class="author-details d-flex align-items-center">
-                <img src="${news.author.img}" style="width: 50px; border-radius: 50%" class="img-fluid me-3" alt="" />
+                <img src="${
+                  news.author.img
+                }" style="width: 50px; border-radius: 50%" class="img-fluid me-3" alt="" />
                 <div class="author-name">
                 <span class="fw-bold">${news.author.name}</span> <br />
                 <span>${news.author.published_date}</span>
@@ -61,9 +66,9 @@ const displayNews = (allNews) => {
         </div>
 
       `;
-      newsContainer.appendChild(newsDiv);
-    });
+    newsContainer.appendChild(newsDiv);
   });
 };
+
 
 loadNews();
