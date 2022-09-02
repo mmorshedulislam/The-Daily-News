@@ -43,7 +43,7 @@ const displayNews = (allNews) => {
                   news.author.img
                 }" style="width: 50px; border-radius: 50%" class="img-fluid me-3" alt="" />
                 <div class="author-name">
-                <span class="fw-bold">${news.author.name}</span> <br />
+                <span class="fw-bold">${news.author.name ? news.author.name : 'No Author Found'}</span> <br />
                 <span>${news.author.published_date}</span>
                 </div>
             </div>
@@ -51,7 +51,7 @@ const displayNews = (allNews) => {
             <div class="fw-bold fs-5">
                 <p>
                 <span><i class="fa-regular fa-eye"></i></span>
-                <span>${news.total_view}</span>
+                <span>${news.total_view ? news.total_view : 'No Views'}</span>
                 </p>
             </div>
             <!-- RATING -->
@@ -130,7 +130,11 @@ const displayNewsDetail = (newsDetail) => {
                   newsDetail.author.img
                 }" style="width: 50px; border-radius: 50%" class="img-fluid me-3" alt="" />
                 <div class="author-name">
-                <span class="fw-bold">${newsDetail.author.name}</span> <br />
+                <span class="fw-bold">${
+                  newsDetail.author.name
+                    ? newsDetail.author.name
+                    : "No Author Found"
+                }</span> <br />
                 <span>${newsDetail.author.published_date}</span>
                 </div>
             </div>
@@ -138,7 +142,9 @@ const displayNewsDetail = (newsDetail) => {
             <div class="fw-bold fs-5 d-flex align-items-center">
                 <p>
                 <span><i class="fa-regular fa-eye"></i></span>
-                <span>${newsDetail.total_view}</span>
+                <span>${
+                  newsDetail.total_view ? newsDetail.total_view : "No Views"
+                }</span>
                 </p>
             </div>
             <!-- RATING -->
