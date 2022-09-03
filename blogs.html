@@ -34,12 +34,12 @@
               class="navbar-nav ms-auto mb-2 mb-lg-0 d-flex align-items-center"
             >
               <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="#">News</a>
+                <a class="nav-link active" aria-current="page" href="index.html"
+                  >News</a
+                >
               </li>
               <li class="nav-item">
-                <a class="nav-link" aria-current="page" href="blogs.html"
-                  >Blogs</a
-                >
+                <a class="nav-link" aria-current="page" href="#">Blogs</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link" aria-current="page" href="#"
@@ -157,10 +157,10 @@
     </header>
 
     <main class="container">
-      <!-- ==== NEWS COUNT ==== -->
+      <!-- ==== NEWS LOADER ==== -->
       <section>
         <div id="loader" class="text-center my-4 d-none">
-          <div class="spinner-border" role="status">
+          <div class="spinner-grow" role="status">
             <span class="visually-hidden">Loading...</span>
           </div>
         </div>
@@ -168,7 +168,7 @@
       <!-- ==== NEWS COUNT === -->
       <section>
         <div class="news-count">
-          <h5><span id="news-count">4</span> items found for the Category</h5>
+          <h5><span id="news-count">3</span> items found for the Category</h5>
         </div>
       </section>
 
@@ -179,8 +179,8 @@
             <h5>Sort By View:</h5>
             <div class="ms-2">
               <select class="form-select" aria-label="Default select example">
-                <option>Default</option>
-                <option selected value="1">Most Views</option>
+                <option selected>Default</option>
+                <option value="1">Most Views</option>
                 <option value="2">Date</option>
                 <option value="3">Name</option>
               </select>
@@ -193,8 +193,13 @@
         </div>
       </section>
 
+      <!-- BLOGS CONTAINER -->
+      <section class="my-4">
+        <div class="row g-4" id="blogs-container">
+        </div>
+      </section>
       <!-- ===== NEWS  CONTAINER ===== -->
-      <section class="my-5" id="newsContainer"></section>
+      <!-- <section class="my-5" id="newsContainer"></section> -->
       <!-- ===== MODAL OR DETAIL OF NEWS ==== -->
       <section>
         <!-- Button trigger modal -->
@@ -258,6 +263,7 @@
       crossorigin="anonymous"
     ></script>
     <!-- CUSTOM JS -->
-    <script src="js/app.js"></script>
+    <!-- <script src="js/app.js"></script> -->
+    <script src="js/blog.js"></script>
   </body>
 </html>

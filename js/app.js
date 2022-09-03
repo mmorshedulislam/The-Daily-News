@@ -1,14 +1,27 @@
 const loadNews = async (id) => {
   const url = `https://openapi.programming-hero.com/api/news/category/${id}`;
-  const res = await fetch(url);
-  const data = await res.json();
-  displayNews(data.data);
+  try {
+    const res = await fetch(url);
+    const data = await res.json();
+    displayNews(data.data);
+  } catch (error) {
+    console.log(error);
+  }
 };
 
 const displayNews = (allNews) => {
+  // Number of find news by category
   const newsCount = document.getElementById("news-count");
   newsCount.innerText = `${allNews.length ? allNews.length : "No News Found"}`;
   const newsContainer = document.getElementById("newsContainer");
+
+  // Sorting by Most views
+  const sortByViews = () => {
+    allNews.sort((a, b) =>
+      a.total_view < b.total_view ? 1 : b.total_view < a.total_view ? -1 : 0
+    );
+  };
+  sortByViews();
   newsContainer.textContent = ``;
   allNews.forEach((news) => {
     const newsDiv = document.createElement("div");
@@ -34,7 +47,7 @@ const displayNews = (allNews) => {
                 ${news.title}
             </h3>
             <p>
-               ${news.details.slice(0, 450)}
+               ${news.details.substring(0, 350)} ...
             </p>
             </div>
             <div class="news-info container d-flex align-items-center justify-content-between">
@@ -43,7 +56,9 @@ const displayNews = (allNews) => {
                   news.author.img
                 }" style="width: 50px; border-radius: 50%" class="img-fluid me-3" alt="" />
                 <div class="author-name">
-                <span class="fw-bold">${news.author.name ? news.author.name : 'No Author Found'}</span> <br />
+                <span class="fw-bold">${
+                  news.author.name ? news.author.name : "No Author Found"
+                }</span> <br />
                 <span>${news.author.published_date}</span>
                 </div>
             </div>
@@ -51,7 +66,7 @@ const displayNews = (allNews) => {
             <div class="fw-bold fs-5">
                 <p>
                 <span><i class="fa-regular fa-eye"></i></span>
-                <span>${news.total_view ? news.total_view : 'No Views'}</span>
+                <span>${news.total_view ? news.total_view : "No Views"}</span>
                 </p>
             </div>
             <!-- RATING -->
@@ -94,9 +109,13 @@ const toggleLoader = (isLoading) => {
 
 const loadNewsDetail = async (id) => {
   const url = `https://openapi.programming-hero.com/api/news/${id}`;
-  const res = await fetch(url);
-  const data = await res.json();
-  displayNewsDetail(data.data[0]);
+  try {
+    const res = await fetch(url);
+    const data = await res.json();
+    displayNewsDetail(data.data[0]);
+  } catch (error) {
+    console.log(error);
+  }
 };
 
 const displayNewsDetail = (newsDetail) => {
