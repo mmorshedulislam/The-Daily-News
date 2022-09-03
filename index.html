@@ -67,90 +67,9 @@
           </button>
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul
+              id="categories-items"
               class="categories navbar-nav mx-auto mb-2 mb-lg-0 d-flex align-items-center"
-            >
-              <li class="nav-item">
-                <a
-                  onclick="loadNews('01'); toggleLoader('start')"
-                  class="nav-link active"
-                  aria-current="page"
-                  href="#"
-                  >Home</a
-                >
-              </li>
-              <li class="nav-item">
-                <a
-                  onclick="loadNews('02'); toggleLoader('start')"
-                  class="nav-link"
-                  aria-current="page"
-                  href="#"
-                  >Breaking news
-                </a>
-              </li>
-              <li class="nav-item">
-                <a
-                  onclick="loadNews('03'); toggleLoader('start')"
-                  class="nav-link"
-                  aria-current="page"
-                  href="#"
-                  >Regular news</a
-                >
-              </li>
-              <li class="nav-item">
-                <a
-                  onclick="loadNews('04'); toggleLoader('start')"
-                  class="nav-link"
-                  aria-current="page"
-                  href="#"
-                  >International news</a
-                >
-              </li>
-              <li class="nav-item">
-                <a
-                  onclick="loadNews('05'); toggleLoader('start')"
-                  class="nav-link"
-                  aria-current="page"
-                  href="#"
-                  >Sports</a
-                >
-              </li>
-              <li class="nav-item">
-                <a
-                  onclick="loadNews('06'); toggleLoader('start')"
-                  class="nav-link"
-                  aria-current="page"
-                  href="#"
-                  >Entertainment</a
-                >
-              </li>
-              <li class="nav-item">
-                <a
-                  onclick="loadNews('07'); toggleLoader('start')"
-                  class="nav-link"
-                  aria-current="page"
-                  href="#"
-                  >Culture</a
-                >
-              </li>
-              <li class="nav-item">
-                <a
-                  onclick="loadNews('08'); toggleLoader('start')"
-                  class="nav-link"
-                  aria-current="page"
-                  href="#"
-                  >Arts</a
-                >
-              </li>
-              <li class="nav-item">
-                <a
-                  onclick="loadNews(''); toggleLoader('start')"
-                  class="nav-link"
-                  aria-current="page"
-                  href="#"
-                  >All news</a
-                >
-              </li>
-            </ul>
+            ></ul>
           </div>
         </div>
       </nav>
@@ -168,7 +87,7 @@
       <!-- ==== NEWS COUNT === -->
       <section>
         <div class="news-count">
-          <h5><span id="news-count">4</span> items found for the Category</h5>
+          <h5><span id="news-count">4</span> items found for the Category <span id="category-name"></span></h5>
         </div>
       </section>
 
@@ -237,9 +156,9 @@
                 >
                   Close
                 </button>
-                <button type="button" class="btn btn-primary">
+                <!-- <button type="button" class="btn btn-primary">
                   Understood
-                </button>
+                </button> -->
               </div>
             </div>
           </div>

@@ -1,4 +1,34 @@
+const loadCategories = async () => {
+  const url = `https://openapi.programming-hero.com/api/news/categories`;
+  try {
+    const res = await fetch(url);
+    const data = await res.json();
+    displayCategories(data.data.news_category);
+  } catch (error) {
+    console.log(error);
+  }
+};
+
+const displayCategories = async (categories) => {
+  const ulContainer = document.getElementById("categories-items");
+  categories.forEach((category) => {
+    const categoryItem = document.createElement("li");
+    categoryItem.classList.add("nav-item");
+    categoryItem.innerHTML = `
+    <a
+    onclick="loadNews('${category.category_id}'); toggleLoader('start')"
+    class="nav-link active"
+    aria-current="page"
+    href="#">${category.category_name}</a>
+    `;
+    ulContainer.appendChild(categoryItem);
+  });
+};
+
+loadCategories();
+
 const loadNews = async (id) => {
+  console.log(id);
   const url = `https://openapi.programming-hero.com/api/news/category/${id}`;
   try {
     const res = await fetch(url);
@@ -181,4 +211,4 @@ const displayNewsDetail = (newsDetail) => {
   `;
 };
 
-loadNews("03");
+loadNews("01");
